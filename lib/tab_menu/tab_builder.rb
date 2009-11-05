@@ -15,7 +15,7 @@ module TabMenu
       end
       
       content_tag(:li, name, html_options) do
-        @controller.link_to name, url
+        url.blank? ? name : @controller.link_to(name, url)
       end
     end
 
